@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import GrilledNotFriedBanner from './GrilledNotFriedBanner'
 
 export default function SectionTitle({
   tag,
@@ -21,13 +22,9 @@ export default function SectionTitle({
       )}
 
       {variant === 'banner' ? (
-        <div className="mx-auto w-full max-w-2xl overflow-hidden rounded-sm bg-gradient-to-r from-emerald-500 via-cyan-400 via-50% via-rose-500 to-amber-400 px-4 py-3 shadow-[0_4px_32px_rgba(250,204,21,0.12)] sm:px-6 sm:py-3.5">
-          <h2 className="font-brand skew-x-[-6deg] text-2xl uppercase italic tracking-wide text-bg sm:text-3xl lg:text-4xl">
-            {title}
-          </h2>
-        </div>
+        <GrilledNotFriedBanner />
       ) : (
-        <h2 className="font-brand text-4xl leading-none tracking-tight text-cream sm:text-5xl lg:text-6xl">
+        <h2 className="font-body text-4xl font-bold leading-none tracking-tight text-cream sm:text-5xl lg:text-6xl">
           {title}
         </h2>
       )}
