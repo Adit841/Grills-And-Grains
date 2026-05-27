@@ -4,6 +4,7 @@ import SectionTitle from '../components/SectionTitle'
 import MenuFilterBar from '../components/MenuFilterBar'
 import MenuFilterModal from '../components/MenuFilterModal'
 import MenuAccordion from '../components/MenuAccordion'
+import ImageLightbox from '../components/ImageLightbox'
 import {
   menuCategories,
   menuItems,
@@ -36,6 +37,7 @@ export default function Menu() {
   const [draftFilters, setDraftFilters] = useState(defaultMenuFilters)
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [openCategory, setOpenCategory] = useState(menuCategories[0].id)
+  const [previewImage, setPreviewImage] = useState(null)
 
   const filteredItems = useMemo(
     () => filterMenuItems(menuItems, activeFilters),
@@ -126,6 +128,7 @@ export default function Menu() {
                       prev === category.id ? null : category.id,
                     )
                   }
+                  onImageClick={setPreviewImage}
                 />
               )
             })
@@ -188,6 +191,12 @@ export default function Menu() {
         onChange={setDraftFilters}
         onClear={handleClearFilters}
         onApply={handleApplyFilters}
+      />
+
+      <ImageLightbox
+        image={previewImage?.src}
+        name={previewImage?.name}
+        onClose={() => setPreviewImage(null)}
       />
     </section>
   )

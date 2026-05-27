@@ -1,19 +1,27 @@
 import { motion } from 'framer-motion'
-import { Flame, UtensilsCrossed } from 'lucide-react'
+import { Flame, UtensilsCrossed, ZoomIn } from 'lucide-react'
 import { formatPrice } from '../data/menuData'
 
-function MenuItemImage({ item }) {
+function MenuItemImage({ item, onImageClick }) {
   if (item.image) {
     return (
-      <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border border-white/10 sm:h-24 sm:w-24">
+      <button
+        type="button"
+        onClick={() => onImageClick({ src: item.image, name: item.name })}
+        aria-label={`View full image of ${item.name}`}
+        className="group/image relative h-20 w-20 shrink-0 cursor-zoom-in overflow-hidden rounded-xl border border-white/10 transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_20px_rgba(250,204,21,0.15)] sm:h-24 sm:w-24"
+      >
         <img
           src={item.image}
           alt={item.name}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover/image:scale-110"
           loading="lazy"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg/30 to-transparent" />
-      </div>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg/40 to-transparent" />
+        <span className="pointer-events-none absolute bottom-1.5 right-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-bg/70 text-cream/80 opacity-0 transition-opacity duration-300 group-hover/image:opacity-100">
+          <ZoomIn size={12} />
+        </span>
+      </button>
     )
   }
 
@@ -24,7 +32,7 @@ function MenuItemImage({ item }) {
   )
 }
 
-export default function MenuListItem({ item, index = 0 }) {
+export default function MenuListItem({ item, index = 0, onImageClick }) {
   return (
     <motion.article
       initial={{ opacity: 0, x: -12 }}
@@ -32,7 +40,7 @@ export default function MenuListItem({ item, index = 0 }) {
       transition={{ duration: 0.35, delay: index * 0.05, ease: 'easeOut' }}
       className="group flex items-start gap-4 border-b border-white/5 py-4 last:border-b-0 sm:gap-5 sm:py-5"
     >
-      <MenuItemImage item={item} />
+      <MenuItemImage item={item} onImageClick={onImageClick} />
 
       <div className="flex min-w-0 flex-1 items-start justify-between gap-4">
         <div className="min-w-0 flex-1">
