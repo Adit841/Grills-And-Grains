@@ -1,7 +1,6 @@
 export const defaultMenuFilters = {
   hideNonVeg: false,
   spicy: false,
-  kidsChoice: false,
   vegan: false,
   sortBy: null,
 }
@@ -17,9 +16,7 @@ export function sortMenuItems(items, sortBy) {
 export function filterMenuItems(items, filters) {
   let result = [...items]
 
-  if (filters.kidsChoice) {
-    result = result.filter((item) => item.category === 'protein-shake')
-  } else if (filters.spicy) {
+ if (filters.spicy) {
     result = result.filter(
       (item) =>
         (item.category === 'power-bowls' || item.category === 'grilled-sandwiches') &&
@@ -38,10 +35,6 @@ export function filterMenuItems(items, filters) {
 
 export function getVisibleCategories(categories, filters, filteredItems) {
   const categoryIds = [...new Set(filteredItems.map((item) => item.category))]
-
-  if (filters.kidsChoice) {
-    return categories.filter((category) => category.id === 'protein-shake')
-  }
 
   if (filters.spicy) {
     return categories.filter((category) =>

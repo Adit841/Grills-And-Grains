@@ -47,7 +47,6 @@ export default function MenuFilterModal({
     onChange({
       ...draftFilters,
       spicy: key === 'spicy' ? !draftFilters.spicy : false,
-      kidsChoice: key === 'kidsChoice' ? !draftFilters.kidsChoice : false,
       vegan: key === 'vegan' ? !draftFilters.vegan : false,
     })
   }
@@ -157,14 +156,6 @@ export default function MenuFilterModal({
                   >
                     <Flame size={15} className="text-red-400" />
                     Spicy
-                  </FilterChip>
-                  <FilterChip
-                    active={draftFilters.kidsChoice}
-                    onClick={() => toggleDietary('kidsChoice')}
-                    className="inline-flex items-center gap-2"
-                  >
-                    <Baby size={15} />
-                    Kid&apos;s choice
                   </FilterChip>
                   <FilterChip
                     active={draftFilters.vegan}

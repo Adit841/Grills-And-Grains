@@ -3,7 +3,6 @@ import { SlidersHorizontal, Ban, Flame, Baby, Leaf, ChevronDown } from 'lucide-r
 const quickFilters = [
   { id: 'hideNonVeg', label: 'Hide non-veg', icon: Ban },
   { id: 'spicy', label: 'Spicy', icon: Flame, iconClass: 'text-red-400' },
-  { id: 'kidsChoice', label: "Kid's choice", icon: Baby },
   { id: 'vegan', label: 'Vegan', icon: Leaf, iconClass: 'text-emerald-400' },
 ]
 
@@ -15,7 +14,6 @@ export default function MenuFilterBar({
   const hasActiveFilters =
     activeFilters.hideNonVeg ||
     activeFilters.spicy ||
-    activeFilters.kidsChoice ||
     activeFilters.vegan ||
     activeFilters.sortBy
 

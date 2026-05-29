@@ -112,7 +112,7 @@ src/
 Menu data lives in `src/data/menuData.js`. Each item supports:
 
 - `protein`, `calories`, `price`
-- `spicy`, `kidsChoice`, `vegan` flags
+- `spicy`, `vegan` flags
 - Optional `image` import from `src/assets/images/`
 
 Filter logic is in `src/utils/menuFilters.js`:

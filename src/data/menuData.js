@@ -2,8 +2,9 @@ import batataPaneerBowl from '../assets/images/Batata Paneer Bowl.jpeg'
 import chipotleChickpeaBowl from '../assets/images/Chitpotle Chicken Bowl.jpeg'
 import muscleMochaShake from '../assets/images/Muscle Mocha Shake.jpeg'
 import tandooriPaneerPress from '../assets/images/Tandoori Paneer Press Grilled Sandwich.jpeg'
-import tokyoTurboBowl from '../assets/images/Tokyo turbo bowl.jpeg'
-
+import tokyoTurboBowl from '../assets/images/Tokyo Turbo Bowl.jpeg'
+import smokyRajmaBowl from '../assets/images/Smoky Rajma Bowl.jpeg'
+import theProteinStack from '../assets/images/The Protein Stack.jpeg'
 export const menuCategories = [
   {
     id: 'power-bowls',
@@ -41,9 +42,8 @@ export const menuItems = [
     price: 289,
     isVeg: true,
     spicy: false,
-    kidsChoice: true,
     vegan: true,
-    image: null,
+    image: smokyRajmaBowl,
   },
   {
     id: 'chipotle-chickpea-bowl',
@@ -54,7 +54,6 @@ export const menuItems = [
     price: 299,
     isVeg: true,
     spicy: true,
-    kidsChoice: false,
     vegan: false,
     image: chipotleChickpeaBowl,
   },
@@ -67,7 +66,6 @@ export const menuItems = [
     price: 319,
     isVeg: true,
     spicy: true,
-    kidsChoice: false,
     vegan: false,
     image: tokyoTurboBowl,
   },
@@ -80,7 +78,6 @@ export const menuItems = [
     price: 319,
     isVeg: true,
     spicy: false,
-    kidsChoice: false,
     vegan: false,
     image: batataPaneerBowl,
   },
@@ -93,7 +90,6 @@ export const menuItems = [
     price: 329,
     isVeg: true,
     spicy: true,
-    kidsChoice: false,
     vegan: false,
     image: null,
   },
@@ -106,7 +102,6 @@ export const menuItems = [
     price: 249,
     isVeg: true,
     spicy: true,
-    kidsChoice: false,
     vegan: false,
     image: tandooriPaneerPress,
   },
@@ -119,7 +114,6 @@ export const menuItems = [
     price: 259,
     isVeg: true,
     spicy: true,
-    kidsChoice: false,
     vegan: true,
     image: null,
   },
@@ -132,7 +126,6 @@ export const menuItems = [
     price: 229,
     isVeg: true,
     spicy: false,
-    kidsChoice: true,
     vegan: false,
     image: null,
   },
@@ -145,9 +138,8 @@ export const menuItems = [
     price: 339,
     isVeg: true,
     spicy: false,
-    kidsChoice: false,
     vegan: false,
-    image: null,
+    image: theProteinStack,
   },
   {
     id: 'muscle-mocha-shake',
@@ -158,7 +150,6 @@ export const menuItems = [
     price: 189,
     isVeg: true,
     spicy: false,
-    kidsChoice: true,
     vegan: false,
     image: muscleMochaShake,
   },

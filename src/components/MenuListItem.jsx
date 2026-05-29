@@ -53,11 +53,6 @@ export default function MenuListItem({ item, index = 0, onImageClick }) {
                 Spicy
               </span>
             )}
-            {item.kidsChoice && (
-              <span className="rounded-full bg-accent/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent">
-                Kid&apos;s Choice
-              </span>
-            )}
           </div>
 
           <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-cream/50 sm:text-sm">

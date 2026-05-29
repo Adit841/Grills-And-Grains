@@ -27,7 +27,6 @@ function applyQuickFilter(prev, key) {
   return {
     ...prev,
     spicy: key === 'spicy' ? !isActive : false,
-    kidsChoice: key === 'kidsChoice' ? !isActive : false,
     vegan: key === 'vegan' ? !isActive : false,
   }
 }
