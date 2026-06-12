@@ -7,6 +7,7 @@ import smokyRajmaBowl from '../assets/images/Smoky Rajma Bowl.jpeg'
 import theProteinStack from '../assets/images/The Protein Stack.jpeg'
 import tandooriTitanBowl from '../assets/images/Tandoori Titan Bowl.jpeg'
 import powerEggPot from '../assets/images/Power Egg Pot.jpeg'
+import powerPastaBowl from '../assets/images/Power Pasta Bowl.jpeg'
 export const menuCategories = [
   {
     id: 'power-bowls',
@@ -31,6 +32,12 @@ export const menuCategories = [
     name: 'Shakes',
     fullName: 'Protein Shake',
     description: 'Smooth, satisfying post-workout fuel',
+  },
+  {
+    id: 'pasta',
+    name: 'Pasta',
+    fullName: 'Pasta',
+    description: 'High-protein pasta bowls for sustained energy',
   },
 ]
 
@@ -142,6 +149,18 @@ export const menuItems = [
     spicy: false,
     vegan: false,
     image: muscleMochaShake,
+  },
+  {
+    id: 'power-pasta-bowl',
+    category: 'pasta',
+    name: 'Power Pasta Bowl',
+    protein: '35G',
+    calories: '~550 KCAL',
+    price: 279,
+    isVeg: true,
+    spicy: false,
+    vegan: false,
+    image: powerPastaBowl,
   },
 ]
 
