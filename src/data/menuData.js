@@ -6,6 +6,7 @@ import tokyoTurboBowl from '../assets/images/Tokyo Turbo Bowl.jpeg'
 import smokyRajmaBowl from '../assets/images/Smoky Rajma Bowl.jpeg'
 import theProteinStack from '../assets/images/The Protein Stack.jpeg'
 import tandooriTitanBowl from '../assets/images/Tandoori Titan Bowl.jpeg'
+import powerEggPot from '../assets/images/Power Egg Pot.jpeg'
 export const menuCategories = [
   {
     id: 'power-bowls',
@@ -107,28 +108,16 @@ export const menuItems = [
     image: tandooriPaneerPress,
   },
   {
-    id: 'tokyo-crunch-melt',
-    category: 'grilled-sandwiches',
-    name: 'Tokyo Crunch Melt',
-    protein: '24G',
-    calories: '~510 KCAL',
-    price: 259,
-    isVeg: true,
-    spicy: true,
-    vegan: true,
-    image: null,
-  },
-  {
     id: 'power-egg-pot',
     category: 'egg-editions',
     name: 'Power Egg Pot',
     protein: '24G',
     calories: '~430 KCAL',
-    price: 229,
+    price: 189,
     isVeg: true,
     spicy: false,
     vegan: false,
-    image: null,
+    image: powerEggPot,
   },
   {
     id: 'the-protein-stack',
@@ -136,7 +125,7 @@ export const menuItems = [
     name: 'The Protein Stack',
     protein: '34G',
     calories: '~580 KCAL',
-    price: 339,
+    price: 299,
     isVeg: true,
     spicy: false,
     vegan: false,
@@ -148,7 +137,7 @@ export const menuItems = [
     name: 'Muscle Mocha Shake',
     protein: '28G',
     calories: '~390 KCAL',
-    price: 189,
+    price: 179,
     isVeg: true,
     spicy: false,
     vegan: false,
