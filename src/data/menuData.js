@@ -5,6 +5,7 @@ import tandooriPaneerPress from '../assets/images/Tandoori Paneer Press Grilled 
 import tokyoTurboBowl from '../assets/images/Tokyo Turbo Bowl.jpeg'
 import smokyRajmaBowl from '../assets/images/Smoky Rajma Bowl.jpeg'
 import theProteinStack from '../assets/images/The Protein Stack.jpeg'
+import tandooriTitanBowl from '../assets/images/Tandoori Titan Bowl.jpeg'
 export const menuCategories = [
   {
     id: 'power-bowls',
@@ -39,7 +40,7 @@ export const menuItems = [
     name: 'Smoky Rajma Bowl',
     protein: '22G',
     calories: '~500 KCAL',
-    price: 289,
+    price: 229,
     isVeg: true,
     spicy: false,
     vegan: true,
@@ -63,7 +64,7 @@ export const menuItems = [
     name: 'Tokyo Turbo Bowl',
     protein: '28G',
     calories: '~520 KCAL',
-    price: 319,
+    price: 299,
     isVeg: true,
     spicy: true,
     vegan: false,
@@ -75,7 +76,7 @@ export const menuItems = [
     name: 'Desi Batata Paneer Bowl',
     protein: '30G',
     calories: '~590 KCAL',
-    price: 319,
+    price: 279,
     isVeg: true,
     spicy: false,
     vegan: false,
@@ -87,11 +88,11 @@ export const menuItems = [
     name: 'Tandoori Titan Bowl',
     protein: '32G',
     calories: '~560 KCAL',
-    price: 329,
+    price: 319,
     isVeg: true,
     spicy: true,
     vegan: false,
-    image: null,
+    image: tandooriTitanBowl,
   },
   {
     id: 'tandoori-paneer-press',
