@@ -35,7 +35,7 @@ export default function Menu() {
   const [activeFilters, setActiveFilters] = useState(defaultMenuFilters)
   const [draftFilters, setDraftFilters] = useState(defaultMenuFilters)
   const [isFilterOpen, setIsFilterOpen] = useState(false)
-  const [openCategory, setOpenCategory] = useState(menuCategories[0].id)
+  const [openCategories, setOpenCategories] = useState([menuCategories[0].id])
   const [previewImage, setPreviewImage] = useState(null)
 
   const filteredItems = useMemo(
@@ -49,15 +49,17 @@ export default function Menu() {
   )
 
   useEffect(() => {
-    if (
-      openCategory &&
-      visibleCategories.some((category) => category.id === openCategory)
-    ) {
-      return
-    }
+    setOpenCategories((prev) => {
+      const visibleIds = new Set(visibleCategories.map((category) => category.id))
+      const next = prev.filter((id) => visibleIds.has(id))
 
-    setOpenCategory(visibleCategories[0]?.id ?? null)
-  }, [visibleCategories, openCategory])
+      if (next.length === 0 && visibleCategories[0]) {
+        return [visibleCategories[0].id]
+      }
+
+      return next
+    })
+  }, [visibleCategories])
 
   const handleOpenFilters = () => {
     setDraftFilters(activeFilters)
@@ -121,10 +123,12 @@ export default function Menu() {
                   key={category.id}
                   category={category}
                   items={categoryItems}
-                  isOpen={openCategory === category.id}
+                  isOpen={openCategories.includes(category.id)}
                   onToggle={() =>
-                    setOpenCategory((prev) =>
-                      prev === category.id ? null : category.id,
+                    setOpenCategories((prev) =>
+                      prev.includes(category.id)
+                        ? prev.filter((id) => id !== category.id)
+                        : [...prev, category.id],
                     )
                   }
                   onImageClick={setPreviewImage}
