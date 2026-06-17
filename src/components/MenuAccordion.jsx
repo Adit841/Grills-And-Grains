@@ -3,7 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import MenuListItem from './MenuListItem'
 
-export default function MenuAccordion({ category, items, isOpen, onToggle, onImageClick }) {
+export default function MenuAccordion({
+  category,
+  items,
+  isOpen,
+  onToggle,
+  onImageClick,
+  onItemClick,
+}) {
   const count = items.length
 
   return (
@@ -49,6 +56,7 @@ export default function MenuAccordion({ category, items, isOpen, onToggle, onIma
                     item={item}
                     index={index}
                     onImageClick={onImageClick}
+                    onItemClick={onItemClick}
                   />
                 ))
               ) : (

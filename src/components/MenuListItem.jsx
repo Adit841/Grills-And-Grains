@@ -32,7 +32,7 @@ function MenuItemImage({ item, onImageClick }) {
   )
 }
 
-export default function MenuListItem({ item, index = 0, onImageClick }) {
+export default function MenuListItem({ item, index = 0, onImageClick, onItemClick }) {
   return (
     <motion.article
       initial={{ opacity: 0, x: -12 }}
@@ -42,10 +42,15 @@ export default function MenuListItem({ item, index = 0, onImageClick }) {
     >
       <MenuItemImage item={item} onImageClick={onImageClick} />
 
-      <div className="flex min-w-0 flex-1 items-start justify-between gap-4">
-        <div className="min-w-0 flex-1">
+      <button
+        type="button"
+        onClick={() => onItemClick(item)}
+        aria-label={`View details for ${item.name}`}
+        className="flex min-w-0 flex-1 cursor-pointer items-start justify-between gap-4 rounded-xl text-left transition-colors hover:bg-white/[0.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
+      >
+        <div className="min-w-0 flex-1 px-1 py-0.5">
           <div className="flex flex-wrap items-center gap-2">
-            <h4 className="font-brand text-lg tracking-wide text-cream sm:text-xl">
+            <h4 className="font-brand text-lg tracking-wide text-cream transition-colors group-hover:text-accent sm:text-xl">
               {item.name}
             </h4>
             {item.spicy && (
@@ -65,10 +70,10 @@ export default function MenuListItem({ item, index = 0, onImageClick }) {
           </div>
         </div>
 
-        <span className="shrink-0 font-brand text-xl text-accent sm:text-2xl">
+        <span className="shrink-0 px-1 py-0.5 font-brand text-xl text-accent sm:text-2xl">
           {formatPrice(item.price)}
         </span>
-      </div>
+      </button>
     </motion.article>
   )
 }

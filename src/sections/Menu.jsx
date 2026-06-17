@@ -5,6 +5,7 @@ import MenuFilterBar from '../components/MenuFilterBar'
 import MenuFilterModal from '../components/MenuFilterModal'
 import MenuAccordion from '../components/MenuAccordion'
 import ImageLightbox from '../components/ImageLightbox'
+import DishDetailModal from '../components/DishDetailModal'
 import {
   menuCategories,
   menuItems,
@@ -37,6 +38,7 @@ export default function Menu() {
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [openCategories, setOpenCategories] = useState([menuCategories[0].id])
   const [previewImage, setPreviewImage] = useState(null)
+  const [selectedDish, setSelectedDish] = useState(null)
 
   const filteredItems = useMemo(
     () => filterMenuItems(menuItems, activeFilters),
@@ -132,6 +134,7 @@ export default function Menu() {
                     )
                   }
                   onImageClick={setPreviewImage}
+                  onItemClick={setSelectedDish}
                 />
               )
             })
@@ -200,6 +203,11 @@ export default function Menu() {
         image={previewImage?.src}
         name={previewImage?.name}
         onClose={() => setPreviewImage(null)}
+      />
+
+      <DishDetailModal
+        dish={selectedDish}
+        onClose={() => setSelectedDish(null)}
       />
     </section>
   )
